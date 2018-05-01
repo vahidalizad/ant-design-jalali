@@ -33,6 +33,11 @@
         section{
             padding: 20px 0;
         }
+        code{
+            margin: 15px;
+            display: block;
+            color: #777777;
+        }
     </style>
     <script src="https://unpkg.com/jalali-moment/dist/jalali-moment.browser.js"></script>
     <!--<script src="../dist/jalali-moment.browser.js"></script>-->
@@ -47,10 +52,11 @@
     <h3>Miladi <a href="https://github.com/fingerpich/jalali-moment#convert-gregorian-miladi-to-jalali-shamsi-persian">to Shamsi</a>(تبدیل تاریخ میلادی به شمسی)</h3>
     <p>این کتابخانه میتواند برای تبدیل تاریخ میلادی به شمسی استفاده شود.</p>
     <form id="convertToJalaliForm">
-        <input id="gregorianInput" placeHolder="DD/MM/YYYY" value="24/1/1989">
+        <input id="gregorianInput" placeHolder="DD/MM/YYYY" value="1/24/1989">
         <button type="submit">to Jalali</button>
         <span id="jalaliOutput"></span>
     </form>
+    <code>moment(input).locale('fa').format('YYYY/MM/DD');</code>
 
 </section>
 
@@ -62,6 +68,7 @@
         <button id="convertToGregorian">to Gregorian</button>
         <span id="gregorianOutput"></span>
     </form>
+    <code>moment.from(input, 'fa').locale('en').format('MM/DD/YYYY');</code>
 </section>
 
 <section>
@@ -72,6 +79,7 @@
         <button type="submit">validate</button>
         <span id="ValidationOutput"></span>
     </form>
+    <code>moment(input).isValid();</code>
 </section>
 
 
@@ -86,14 +94,14 @@
 
     document.getElementById("convertToJalaliForm").onsubmit = function(){
         var input = document.getElementById("gregorianInput").value;
-        var output = moment(input).locale('fa').format('DD/MM/YYYY');
+        var output = moment(input).locale('fa').format('YYYY/MM/DD');
         document.getElementById("jalaliOutput").innerText = output;
         return false;
     };
 
     document.getElementById("convertToGregorianForm").onsubmit = function(){
         var input = document.getElementById("jalaliInput").value;
-        var output = moment.from(input, 'fa').locale('en').format('YYYY/MM/DD');
+        var output = moment.from(input, 'fa').locale('en').format('MM/DD/YYYY');
         document.getElementById("gregorianOutput").innerText = output;
         return false;
     };
