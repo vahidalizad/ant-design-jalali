@@ -1,6 +1,6 @@
 {
   "name": "antd-jalali-moment",
-  "version": "3.3.2",
+  "version": "3.3.8",
   "description": "Support for jalali dates and time for ant-design(antd)",
   "author": {
     "name": "Vahid Alizad",
@@ -30,9 +30,9 @@
     "test": "mocha --reporter spec --ui bdd --colors --check-leaks  test.js",
     "build": "webpack --config webpack.browser.js",
     "dev": "webpack --progress --colors --watch",
-    "publish2": "mkdir -p pkg;cp -r ./* ./pkg; cp npmdoc.md ./pkg/README.md; cd ./pkg;npm run build",
-    "postPublish": "npm publish pkg;rm -rf pkg",
-    "lint": "eslint antd-jalali-moment.js && eslint test.js"
+    "make-npm-pack": "mkdir -p pkg;cp * ./pkg;cp -r node_modules/ ./pkg/node_modules; cp npmdoc.md ./pkg/README.md; cd ./pkg;npm run build",
+    "publish-npm-pack": "npm publish pkg;rm -rf pkg",
+    "lint": "eslint jalali-moment.js && eslint test.js"
   },
   "homepage": "https://github.com/vahidalizad/ant-design-jalali",
   "bugs": {
@@ -42,21 +42,24 @@
     "type": "git",
     "url": "git://github.com/vahidalizad/ant-design-jalali.git"
   },
+  "bin": {
+    "jalalim": "./cli.js"
+  },
   "devDependencies": {
     "chai": "^4.2.0",
     "codacy-coverage": "^3.4.0",
-    "eslint": "^5.13.0",
+    "eslint": "^7.2.0",
     "istanbul": "^0.4.5",
-    "mocha": "^5.2.0",
+    "mocha": "^8.0.1",
     "mocha-lcov-reporter": "^1.3.0",
     "uglifyjs-webpack-plugin": "^2.1.1",
     "webpack": "^4.29.0",
-    "webpack-cli": "^3.2.1"
+    "webpack-cli": "^3.3.12"
   },
   "dependencies": {
-    "commander": "^2.19.0",
-    "inquirer": "^6.2.2",
-    "moment": "^2.23.0"
+    "commander": "^5.1.0",
+    "inquirer": "^7.1.0",
+    "moment": "^2.26.0"
   },
   "typings": "./antd-jalali-moment.d.ts"
 }
