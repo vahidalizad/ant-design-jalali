@@ -1,5 +1,5 @@
 var chai = require("chai");
-var jalaliMoment = require("./jalali-moment.js");
+var jalaliMoment = require("./antd-jalali-moment.js");
 var moment = require("moment");
 
 chai.should();
@@ -356,19 +356,19 @@ describe("moment", function () {
   });
   describe("#jDaysInMonth", function () {
     it("should return Jalaali days count in month", function () {
-      const md = jalaliMoment
+      var md = jalaliMoment
         .from("1398/12/01", "fa", "YYYY/MM/DD")
         .jDaysInMonth();
       md.should.be.equal(29);
     });
     it("should return ordibehesht days count", function () {
-      const md = jalaliMoment
+      var md = jalaliMoment
         .from("1398/01/01", "fa", "jYYYY/jMM/jDD")
         .jDaysInMonth();
       md.should.be.equal(31);
     });
     it("should return leap year esfand days count", function () {
-      const md = jalaliMoment.jDaysInMonth(1398, 11); // esfand 98
+      var md = jalaliMoment.jDaysInMonth(1398, 11); // esfand 98
       md.should.be.equal(29);
     });
   });
@@ -1396,8 +1396,8 @@ describe("moment", function () {
   });
   describe("compare jalaliMoment and moment", function () {
     it("utc should be the same", function () {
-      const a = jalaliMoment.utc("09:30", "HH:mm");
-      const b = moment.utc("09:30", "HH:mm");
+      var a = jalaliMoment.utc("09:30", "HH:mm");
+      var b = moment.utc("09:30", "HH:mm");
       a.locale("en")
         .format("YYMMDD-HH:mm")
         .should.be.equal(b.format("YYMMDD-HH:mm"));
@@ -1406,13 +1406,13 @@ describe("moment", function () {
   describe("jmoment vs moment", function () {
     it("ISO_8601", function () {
       //https://github.com/fingerpich/jalali-moment/issues/70
-      const d1 = moment("2019-10-26", moment.ISO_8601).format();
-      const d2 = jalaliMoment("2019-10-26", moment.ISO_8601).format();
+      var d1 = moment("2019-10-26", moment.ISO_8601).format();
+      var d2 = jalaliMoment("2019-10-26", moment.ISO_8601).format();
       d1.should.be.equal(d2);
     });
     it("diff locale fa", function () {
       //https://github.com/fingerpich/jalali-moment/issues/78
-      const testDates = [
+      var testDates = [
         {
           d1: jalaliMoment("2020-03-20").locale("fa"), //1399/1/1
           d2: jalaliMoment("2021-03-21").locale("fa"), //1400/1/1
@@ -1475,4 +1475,3 @@ describe("moment", function () {
     });
   });
 });
-``;
