@@ -1,3 +1,5 @@
+<div dir="auto">
+  
 # تاریخ جلالی برای ant-design
 
 کتابخانه ای برای افزودن تاریخ شمسی به ant-design
@@ -8,24 +10,34 @@
 
 ## نصب
 
+<div dir="ltr">
+  
 ```shell
 npm install antd-jalali-moment -S
 ```
+  
+</div> 
 
 یا
 
+<div dir="ltr">
+  
 ```shell
 yarn add antd-jalali-moment
 ```
+  
+</div>
 
 ## استفاده
 
 بعد از نصب کافی است این کتابخانه را به عنوان alias برای moment قرار دهید
 
 اگر از react-app-rewired استفاده میکنید میتوانید از فایل زیر برای تغییر تنظیمات استفاده کنید.
+  
+<div dir="ltr">
 
 #### config.overrides.js
-
+  
 ```js
 const { injectBabelPlugin } = require("react-app-rewired");
 const rewireLess = require("react-app-rewire-less");
@@ -44,3 +56,7 @@ module.exports = function override(config, env) {
   return config;
 };
 ```
+    
+</div>
+  
+</div>
