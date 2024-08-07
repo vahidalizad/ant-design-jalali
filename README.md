@@ -5,6 +5,7 @@
 > This repository is archived and is not accepting any new issues, pull requests, or updates.
 > 
 > **Please consider using the following alternative:**
+> - [Ant-Design Jalali/Hijri DatePicker](https://github.com/masoudit/antd-jalali-plus)
 > - [Ant-Design Jalali DatePicker](https://github.com/saeedrahimi/antd-jalali)
 
 ---
