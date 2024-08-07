@@ -1,3 +1,14 @@
+# DEPRECATION NOTICE
+
+> **⚠️ WARNING: This project is no longer maintained.**
+>
+> This repository is archived and is not accepting any new issues, pull requests, or updates.
+> 
+> **Please consider using the following alternative:**
+> - [Ant-Design Jalali DatePicker](https://github.com/saeedrahimi/antd-jalali)
+
+---
+
 # Jalali dates and times for ant-design
 
 This is a fork of [jalali-moment](https://github.com/fingerpich/jalali-moment) and it's modified just to use with [ant-design](https://github.com/ant-design/ant-design) so if you want use it just for jalali dates and time you should go to jalali-moment page and see the original docs
